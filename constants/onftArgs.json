@@ -1,0 +1,10 @@
+{
+  "fuji": {
+    "startMintId": 1,
+    "endMintId": 50
+  },
+  "mumbai": {
+    "startMintId": 51,
+    "endMintId": 100
+  }
+}
