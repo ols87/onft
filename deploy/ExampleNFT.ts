@@ -9,8 +9,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const [deployer] = await hre.ethers.getSigners()
   const minGasToStore = 150000
 
-  console.log(deployer.address)
-
   const lzEndpointAddress = (LZ_ENDPOINTS as any)[hre.network.name]
   const onftArgs = (ONFT_ARGS as any)[hre.network.name]
   console.log({ onftArgs })
