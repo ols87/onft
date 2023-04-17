@@ -2,7 +2,7 @@ import { HardhatRuntimeEnvironment } from "hardhat/types"
 
 export async function ownerOf(taskArgs: any, hre: HardhatRuntimeEnvironment) {
   const contract = await hre.deployments.get(taskArgs.contract)
-  const contractInstance = await ethers.getContractAt(contract.abi, contract.address)
+  const contractInstance = await hre.ethers.getContractAt(contract.abi, contract.address)
   let tokenId = taskArgs.tokenId
 
   try {

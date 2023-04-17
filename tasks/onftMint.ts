@@ -2,7 +2,7 @@ import { HardhatRuntimeEnvironment } from "hardhat/types"
 
 export async function onftMint(taskArgs: any, hre: HardhatRuntimeEnvironment) {
   const contract = await hre.deployments.get(taskArgs.contract)
-  const contractInstance = await ethers.getContractAt(contract.abi, contract.address)
+  const contractInstance = await hre.ethers.getContractAt(contract.abi, contract.address)
 
   try {
     let tx = await (await contractInstance.mint()).wait()

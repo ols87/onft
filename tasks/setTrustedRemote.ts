@@ -22,7 +22,7 @@ export async function setTrustedRemote(taskArgs: TaskArgs, hre: HardhatRuntimeEn
 
   // get local contract
   const contract = await hre.deployments.get(localContract)
-  const localContractInstance = await ethers.getContractAt(contract.abi, contract.address)
+  const localContractInstance = await hre.ethers.getContractAt(contract.abi, contract.address)
 
   // get deployed remote contract address
   const remoteAddress = getDeploymentAddresses(taskArgs.targetNetwork)[remoteContract as Chain]
