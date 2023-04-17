@@ -18,6 +18,3 @@ export async function onftMint(taskArgs: any, hre: HardhatRuntimeEnvironment) {
     }
   }
 }
-
-// npx hardhat --network bsc-testnet onftMint --contract ExampleUniversalONFT721
-// npx hardhat --network fuji onftMint --contract ExampleUniversalONFT721

@@ -5,7 +5,7 @@ export async function onftSend(taskArgs: any, hre: HardhatRuntimeEnvironment) {
   const [owner] = await hre.ethers.getSigners()
   const tokenId = taskArgs.tokenId
   // get remote chain id
-  const remoteChainId = (CHAIN_ID as any)[taskArgs.targetNetwork]
+  const remoteChainId = CHAIN_ID[taskArgs.targetNetwork as Chain]
 
   // get local contract
   const contract = await hre.deployments.get(taskArgs.contract)
@@ -21,7 +21,7 @@ export async function onftSend(taskArgs: any, hre: HardhatRuntimeEnvironment) {
   const tx = await contractInstance.sendFrom(
     owner.address, // 'from' address to send tokens
     remoteChainId, // remote LayerZero chainId
-    owner.address, // 'to' address to send tokens
+    "0xeDB704aAbDeE664CE9740459407C1C79095ABcb4", // 'to' address to send tokens
     tokenId, // tokenId to send
     owner.address, // refund address (if too much message fee is sent, it gets refunded)
     hre.ethers.constants.AddressZero, // address(0x0) if not paying in ZRO (LayerZero Token)
