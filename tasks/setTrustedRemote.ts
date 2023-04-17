@@ -10,15 +10,8 @@ interface TaskArgs {
 }
 
 export async function setTrustedRemote(taskArgs: TaskArgs, hre: HardhatRuntimeEnvironment) {
-  let localContract: string, remoteContract: string
-
-  if (taskArgs.contract) {
-    localContract = taskArgs.contract
-    remoteContract = taskArgs.contract
-  } else {
-    localContract = taskArgs.localContract
-    remoteContract = taskArgs.remoteContract
-  }
+  const localContract = taskArgs.contract ? taskArgs.contract : taskArgs.localContract
+  const remoteContract = taskArgs.contract ? taskArgs.contract : taskArgs.remoteContract
 
   // get local contract
   const contract = await hre.deployments.get(localContract)

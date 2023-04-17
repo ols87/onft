@@ -3,7 +3,7 @@
     "startMintId": 1,
     "endMintId": 50
   },
-  "fantom-testnet": {
+  "mumbai": {
     "startMintId": 51,
     "endMintId": 100
   }
