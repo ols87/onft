@@ -53,5 +53,5 @@ npx hardhat --network fantom-testnet onftSend --target-network fuji --token-id 5
 
 ```
 npx hardhat --network fuji ownerOf --token-id 1 --contract ExampleNFT
-npx hardhat --network fantom-testnet ownerOf --token-id 1 --contract ExampleNFT
+npx hardhat --network fantom-testnet ownerOf --token-id 51 --contract ExampleNFT
 ```
